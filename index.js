@@ -1,6 +1,17 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const connection = require("./database/database");
+
+//conexão BD
+connection
+    .authenticate()
+    .then(() => {
+        console.log("Conexão efetuada com sucesso");
+    })
+    .catch((erro) => {
+        console.log(erro);
+    })
 
 const port = 8080;
 
@@ -22,7 +33,7 @@ app.get("/perguntar", (req, res) => {
 app.post("/salvarpergunta", (req, res) => {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
-    res.send("Formulario recebido " + titulo" " + descricao);
+    res.send("Formulario recebido " + titulo  + " " + descricao);
 });
 
 app.listen(port, () => { console.log("servidor rodando, porta: " + port) });
