@@ -22,7 +22,7 @@ app.get("/perguntar", (req, res) => {
 app.post("/salvarpergunta", (req, res) => {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
-    res.send("Formulario recebido " + titulo +" " + descricao);
+    res.send("Formulario recebido " + titulo" " + descricao);
 });
 
 app.listen(port, () => { console.log("servidor rodando, porta: " + port) });
