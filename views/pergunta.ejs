@@ -19,22 +19,16 @@
             
         </div>
         <br>
-        <div class="card">
-            <div class="card-header">
-                <h3>Respostas</h3>
-            </div>
-            <div class="card-body">
-                <table class="table table-responsive tab-content table-borderless table-hover">
-                    <tbody>
-                        <% respostas.forEach((resp) => { %>
-                            <tr>
-                                <td><%= resp.corpo  %> </td>
-                            </tr>
-                        <% } ) %> 
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <h3>Respostas</h3>
+        <% respostas.forEach((resp) => { %>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <p><%= resp.corpo  %></p>
+                </div>
+            </div>  
+        <% } ) %> 
+
     </div>
 </body>
 <%- include ('partials/footer.ejs') %>
